@@ -23,19 +23,19 @@ contract CloneFactory {
     }
 }
 
-contract ERC-4824RegistrationSummoner {
+contract ERC4824RegistrationSummoner {
     event NewRegistration(
         address indexed daoAddress,
         string daoURI,
         address registration
     );
 
-    address public ERC-4824Index;
+    address public ERC4824Index;
     address public template; /*Template contract to clone*/
 
-    constructor(address _template, address _ERC-4824Index) {
+    constructor(address _template, address _ERC4824Index) {
         template = _template;
-        ERC-4824Index = _ERC-4824Index;
+        ERC4824Index = _ERC4824Index;
     }
 
     function registrationAddress(
@@ -63,17 +63,17 @@ contract ERC-4824RegistrationSummoner {
         );
 
         if (manager == address(0)) {
-            ERC-4824Registration(registration).initialize(
+            ERC4824Registration(registration).initialize(
                 msg.sender,
                 daoURI_,
-                ERC-4824Index
+                ERC4824Index
             );
         } else {
-            ERC-4824Registration(registration).initialize(
+            ERC4824Registration(registration).initialize(
                 msg.sender,
                 manager,
                 daoURI_,
-                ERC-4824Index
+                ERC4824Index
             );
         }
 
